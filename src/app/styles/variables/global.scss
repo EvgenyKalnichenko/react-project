@@ -7,5 +7,20 @@
 
   --font-size-l: 24px;
   --font-line-l: 32px;
-  --font-l: var(--font-size-l) / var(--font-line-l) var(--font-famaly-main)
+  --font-l: var(--font-size-l) / var(--font-line-l) var(--font-famaly-main);
+
+  --width-container: 1166px;
+  --width-fields: 40px;
+
+
+  --ease: cubic-bezier(0.25,0.1,0.25,1);
+  --theme-duration: 0.24s;
+
+  // breakpoints
+  --breakpoint-xl: 1640px;
+  --breakpoint-lg: 1320px;
+  --breakpoint-md: 1023px;
+  --breakpoint-sm: 767px;
+  --breakpoint-xs: 575px;
+
 }

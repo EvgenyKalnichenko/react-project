@@ -1,0 +1,18 @@
+@import "dark";
+@import "light";
+
+:root {
+  @include light-variables();
+
+  @media (prefers-color-scheme: dark) {
+    @include dark-variables();
+  }
+}
+
+.app.dark-theme {
+  @include dark-variables();
+}
+
+.app.light-theme {
+  @include light-variables();
+}
