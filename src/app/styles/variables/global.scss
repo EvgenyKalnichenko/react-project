@@ -9,9 +9,12 @@
   --font-line-l: 32px;
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font-famaly-main);
 
+  // Sizes
   --width-container: 1166px;
   --width-fields: 40px;
-
+  --navbar-height: 60px;
+  --sidebar-width: 300px;
+  --sidebar-width-collapsed: 80px;
 
   --ease: cubic-bezier(0.25,0.1,0.25,1);
   --theme-duration: 0.24s;

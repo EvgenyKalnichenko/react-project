@@ -39,6 +39,15 @@
   }
 }
 
+.content-page {
+  display: flex;
+}
+
+.content-page-wrapper {
+  flex-grow: 1;
+  padding: 15px;
+}
+
 a {
   color: var(--defult-link-color);
   text-decoration: none;
