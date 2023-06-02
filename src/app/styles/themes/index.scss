@@ -2,17 +2,17 @@
 @import "light";
 
 :root {
-  @include light-variables();
+  @include light-variables;
 
   @media (prefers-color-scheme: dark) {
-    @include dark-variables();
+    @include dark-variables;
   }
 }
 
 .app.dark-theme {
-  @include dark-variables();
+  @include dark-variables;
 }
 
 .app.light-theme {
-  @include light-variables();
+  @include light-variables;
 }
