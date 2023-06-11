@@ -6,7 +6,7 @@ interface AppSpinnerProps {
     sizeLoader?: number
 }
 
-const AppSpinner = ({ className, sizeLoader }: AppSpinnerProps) => {
+export const AppSpinner = ({ className, sizeLoader }: AppSpinnerProps) => {
     const size = sizeLoader ? `${sizeLoader}em` : '2em';
     return (
         <svg
@@ -18,5 +18,3 @@ const AppSpinner = ({ className, sizeLoader }: AppSpinnerProps) => {
         </svg>
     );
 };
-
-export default AppSpinner;

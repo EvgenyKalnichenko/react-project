@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import React, { useState } from 'react';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
-import AppButton from 'shared/ui/AppButton/AppButton';
+import AppButton, { ThemeButton } from 'shared/ui/AppButton/AppButton';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -23,6 +23,7 @@ const Sidebar = ({ className }: SidebarProps) => {
             <AppButton
                 data-testid="sidebar-toggle"
                 type="button"
+                theme={ThemeButton.OUTLINE}
                 onClick={onToggle}
             >
                 toggle
