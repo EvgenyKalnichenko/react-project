@@ -1,11 +1,15 @@
 :root {
+  --ui-indent: 4px;
   --font-famaly-main: consolas, "Times New Roman", serif;
-  --font-size-m: 16px;
-  --font-line-m: 24px;
+  --font-size-m: calc(var(--ui-indent) * 4);
+  --font-line-m: calc(var(--ui-indent) * 6);
   --font-m: var(--font-size-m) / var(--font-line-m) var(--font-famaly-main);
-  --font-size-l: 24px;
-  --font-line-l: 32px;
+  --font-size-l: calc(var(--ui-indent) * 6);
+  --font-line-l: calc(var(--ui-indent) * 8);
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font-famaly-main);
+  --font-size-xl: calc(var(--ui-indent) * 8);
+  --font-line-xl: calc(var(--ui-indent) * 10);
+  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-famaly-main);
 
   // Sizes
   --width-container: 1166px;
@@ -15,7 +19,10 @@
   --sidebar-width-collapsed: 80px;
   --ease: cubic-bezier(0.25,0.1,0.25,1);
   --theme-duration: 0.24s;
-  --ui-indent: 4px;
+  --br: calc(var(--ui-indent) * 4);
+
+  // Transition
+  --transition-v1: ease;
 
   // breakpoints
   --breakpoint-xl: 1640px;

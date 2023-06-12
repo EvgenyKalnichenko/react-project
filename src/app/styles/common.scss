@@ -1,6 +1,6 @@
 .app {
   font: var(--font-m);
-  background: var(--bg-color);
+  background: var(--bg-color-default);
   color: var(--primary-color);
   min-height: 100vh;
   height: 100%;
@@ -48,7 +48,7 @@
 }
 
 a {
-  color: var(--defult-link-color);
+  color: var(--primary-color);
   text-decoration: none;
 }
 

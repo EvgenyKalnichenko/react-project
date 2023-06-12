@@ -1,7 +1,7 @@
 .navbar {
   width: 100%;
   height: var(--navbar-height);
-  background: var(--light-bg-color);
+  background: var(--bg-color-light);
   display: flex;
   align-items: center;
 
@@ -11,7 +11,7 @@
 
   &__link {
     margin-right: 15px;
-    color: var(--defult-link-color);
+    color: var(--primary-color);
 
     &:last-child {
       margin-right: 0;

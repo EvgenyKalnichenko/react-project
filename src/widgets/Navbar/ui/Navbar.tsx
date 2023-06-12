@@ -2,7 +2,6 @@ import React from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
-import LangSwitcher from 'shared/ui/LangSwitcher/ui/LangSwitcher';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -15,7 +14,6 @@ const Navbar = ({ className }: NavbarProps) => {
     return (
         <div className={classNames(cls.navbar)}>
             <div className={classNames(cls.navbar__container)}>
-                <LangSwitcher />
                 <div className={classNames(cls.navbar__list, {}, [className])}>
                     <AppLink
                         theme={AppLinkTheme.SECONDARY}
