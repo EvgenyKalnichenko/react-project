@@ -26,6 +26,9 @@ jobs:
       run: npm install --legacy-peer-deps
       
     - name: linting typescript
+      run: npm run lint:ts:fix
+      
+    - name: linting typescript
       run: npm run lint:ts
 
     - name: linting scss
