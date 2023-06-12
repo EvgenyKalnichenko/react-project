@@ -3,10 +3,6 @@
 $gap: 30px;
 $half-gap: math.div(var(--gap), 2);
 
-@mixin defaultPadding() {
-  padding: calc(var(--ui-indent) * 3);
-}
-
 // блок с соотношением сторон
 // @include responsive-ratio(16,9);
 @mixin ratio($x,$y, $pseudo: true) {
