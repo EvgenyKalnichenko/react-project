@@ -1,7 +1,11 @@
 @mixin light-variables {
-  --bg-color: #F2F2F2;
-  --light-bg-color: #fff;
-  --primary-color: #0E0E0E;
-  --secondary-color: #404040;
-  --defult-link-color: #1E3CAD;
+  --bg-color-default: #EFF5F7;
+  --bg-color: #FFF;
+  --bg-color-light: #E2EEF1;
+  --primary-color: #141C1F;
+  --secondary-color: #ADBCC0;
+  --cancel-color: #F77;
+  --save-color: #62DE85;
+  --icon-color: #5ED3F3;
+  --accent-color: #00C8FF;
 }

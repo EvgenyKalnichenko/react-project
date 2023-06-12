@@ -30,3 +30,17 @@ export const Clear: Story = {
         children: 'Text',
     },
 };
+
+export const Background: Story = {
+    args: {
+        theme: ThemeButton.BACKGROUND,
+        children: 'Text',
+    },
+};
+
+export const BackgroundInverted: Story = {
+    args: {
+        theme: ThemeButton.BACKGROUND_INVERTED,
+        children: 'Text',
+    },
+};
