@@ -23,7 +23,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: loki init
-      run: npx loki init --config ./config/storybook
+      run:  npm i -D loki --legacy-peer-deps
 
     - name: Install
       run: npm install
