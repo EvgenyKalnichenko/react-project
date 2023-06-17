@@ -1,11 +1,16 @@
 .Sidebar {
-  height: calc(100vh - var(--navbar-height));
+  height: calc(100vh - (var(--ui-indent) * 8) * 2);
   width: var(--sidebar-width);
   background: var(--bg-color-light);
-  position: relative;
+  position: absolute;
+  left: 0;
+  top: 0;
   flex-shrink: 0;
   transition: 0.2s var(--ease) width;
   border-radius: calc(var(--ui-indent) * 8);
+  margin: calc(var(--ui-indent) * 8);
+  z-index: 2;
+  overflow: hidden;
 
   &__switchers {
     position: absolute;
@@ -13,8 +18,10 @@
     left: 0;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding: calc(var(--ui-indent) * 3);
     gap: 12px;
     color: var(--icon-color);
   }
@@ -23,7 +30,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 20px;
+    right: 18px;
     color: var(--icon-color);
     height: 100px;
   }
