@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     strategy:
       matrix:
         node-version: [17.x]
@@ -24,27 +24,33 @@ jobs:
 
     - name: Install
       run: npm install --legacy-peer-deps
-      
+
     - name: linting typescript
       run: npm run lint:ts:fix
-      
+      if: always()
+
     - name: linting typescript
       run: npm run lint:ts
+      if: always()
 
     - name: linting scss
       run: npm run lint:scss
+      if: always()
 
     - name: testing unit
       run: npm run test:unit
+      if: always()
 
     - name: build project production
       run: npm run build:prod
-      
+      if: always()
+
     - name: build storybook
       run: npm run storybook:build
-      
-    - name: screenshot testing
-      run: npm run test:ui:ci
+      if: always()
 
+    - name: screenshot testing
+      run: npm run tests:ui:ci
+      if: always()
 
 
