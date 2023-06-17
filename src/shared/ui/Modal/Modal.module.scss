@@ -1,10 +1,8 @@
 .modal {
     $block: &;
+
     position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    inset: 0;
     overflow: hidden;
     transition: opacity 0.2s var(--ease);
     opacity: 0;
@@ -44,7 +42,6 @@
 }
 
 .isClosing {
-
     &.modal {
         opacity: 0;
     }
