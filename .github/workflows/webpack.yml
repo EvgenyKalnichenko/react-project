@@ -50,7 +50,7 @@ jobs:
       if: always()
 
     - name: screenshot testing
-      run: npm run tests:ui:ci
+      run: npm run test:ui:ci
       if: always()
 
 
