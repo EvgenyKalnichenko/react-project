@@ -16,7 +16,7 @@
     "test:ui:ok": "npx loki approve",
     "test:ui:ci": "loki --force --requireReference --reactUri file:./storybook-static",
 
-    "visual:report": "npm-run-all visual:report:*",
+    "visual:report": "npm run visual:report:json && npm run visual:report:html",
     "visual:report:json": "node scripts/generate-visual-json-report.js",
     "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html",
 
