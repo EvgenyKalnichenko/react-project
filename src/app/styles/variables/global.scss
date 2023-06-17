@@ -19,7 +19,7 @@
   --sidebar-width-collapsed: 70px;
   --ease: cubic-bezier(0.25,0.1,0.25,1);
   --theme-duration: 0.24s;
-  --br: calc(var(--ui-indent) * 4);
+  --border-radius: calc(var(--ui-indent) * 4);
 
   // Transition
   --transition-v1: ease;
@@ -30,4 +30,10 @@
   --breakpoint-md: 1023px;
   --breakpoint-sm: 767px;
   --breakpoint-xs: 575px;
+
+  // z-index
+  --modal-layer: 10;
+
+  // цвета
+  --overlay-color: rgba(0 0 0 / 40%);
 }

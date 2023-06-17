@@ -5,7 +5,7 @@
   border: none;
   background: var(--bg-color-light);
   color: var(--primary-color);
-  border-radius: var(--br);
+  border-radius: var(--border-radius);
   transition: 0.2s opacity var(--transition-v1);
   font: var(--font-line-xl);
   display: inline-flex;
@@ -33,6 +33,12 @@
 
 .outline {
   border: 1px solid var(--bg-color-light);
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.outlineInverted {
+  border: 1px solid var(--primary-color);
   color: var(--primary-color);
   background: transparent;
 }
