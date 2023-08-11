@@ -9,10 +9,10 @@
   }
 }
 
-.app.dark-theme, .dark-theme .app, .dark-theme {
+.dark-theme {
   @include dark-variables;
 }
 
-.app.light-theme, .light-theme .app, .light-theme   {
+.light-theme   {
   @include light-variables;
 }
