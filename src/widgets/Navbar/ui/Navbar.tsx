@@ -3,8 +3,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Modal } from 'shared/ui/Modal/Modal';
 import AppButton, { ThemeButton } from 'shared/ui/AppButton/AppButton';
+import { LoginModal } from 'features/AuthByUserName';
 import cls from './Navbar.module.scss';
 import HomeIcon from './icon/Home.svg';
 import InfoIcon from './icon/Info.svg';
@@ -16,7 +16,7 @@ interface NavbarProps {
 
 const Navbar = ({ className, collapsed }: NavbarProps) => {
     const { t } = useTranslation();
-    const [isOpen, setIsOpen] = useState(false);
+    const [isAuthModal, setIsAuthModal] = useState(false);
 
     return (
         <div className={classNames(cls.navbar, { [cls.collapsed]: collapsed }, [className])}>
@@ -41,15 +41,12 @@ const Navbar = ({ className, collapsed }: NavbarProps) => {
                 </div>
             </div>
             <AppButton
-                onClick={() => setIsOpen(true)}
+                onClick={() => setIsAuthModal(true)}
                 theme={ThemeButton.OUTLINE_INVERTED}
             >
                 {t('Войти')}
             </AppButton>
-            <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-                {/* eslint-disable-next-line */}
-                <p>Тут будет авторизация</p>
-            </Modal>
+            <LoginModal isOpen={isAuthModal} onClose={() => setIsAuthModal(false)} />
         </div>
     );
 };

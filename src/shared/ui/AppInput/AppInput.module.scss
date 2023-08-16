@@ -1,0 +1,27 @@
+.AppInput {
+
+  &__error {
+
+  }
+
+  &__focus {
+
+  }
+}
+
+.input {
+  background: transparent;
+  border-radius: var(--border-radius-large);
+  padding: calc(var(--ui-indent) * 2) calc(var(--ui-indent) * 4);
+  outline: none;
+  border: 1px solid var(--icon-color);
+  color: var(--secondary-color);
+}
+
+.error {
+  color: var(--cancel-color);
+  font: var(--font-s);
+  padding: 4px 8px;
+}
+
+.focus {}
