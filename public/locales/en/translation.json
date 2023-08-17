@@ -9,5 +9,7 @@
   "переключатель": "Toggle",
   "Войти": "Login",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "Ваше имя": "Name",
+  "Ваш пароль": "Password"
 }

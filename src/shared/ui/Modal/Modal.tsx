@@ -10,7 +10,8 @@ interface ModalProps {
     className?: string;
     children?: ReactNode;
     isOpen?: boolean;
-    onClose?: () => void
+    onClose?: () => void;
+    lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
@@ -20,6 +21,7 @@ export const Modal = (props: ModalProps) => {
         className,
         children,
         isOpen,
+        lazy,
         onClose,
     } = props;
 
@@ -35,6 +37,14 @@ export const Modal = (props: ModalProps) => {
         }
     }, [onClose]);
     const { theme } = useTheme();
+    const [isLazy, setIsLazy] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
 
     const onContentClick = (e: MouseEvent) => {
         e.stopPropagation();
@@ -61,6 +71,10 @@ export const Modal = (props: ModalProps) => {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };
+
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal>

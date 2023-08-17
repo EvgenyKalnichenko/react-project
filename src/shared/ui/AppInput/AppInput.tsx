@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
-    InputHTMLAttributes, useState, memo, ChangeEvent,
+    InputHTMLAttributes, useState, memo, ChangeEvent, useEffect, useRef,
 } from 'react';
 import cls from './AppInput.module.scss';
 
@@ -11,6 +11,7 @@ interface AppInputProps extends HTMLInputProps {
     error?: string,
     label?: string,
     value?: string,
+    autofocus?: boolean,
     onChange?: (value: string) => void
 }
 
@@ -20,6 +21,7 @@ const AppInput = memo((props: AppInputProps) => {
         onChange,
         error,
         label,
+        autofocus = false,
         type = 'text',
         ...otherProps
     } = props;
@@ -28,6 +30,15 @@ const AppInput = memo((props: AppInputProps) => {
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
     };
+
+    const ref = useRef<HTMLInputElement>();
+
+    useEffect(() => {
+        if (autofocus) {
+            setIsFocus(true);
+            ref.current?.focus();
+        }
+    }, [autofocus]);
 
     return (
         <div className={
@@ -42,6 +53,7 @@ const AppInput = memo((props: AppInputProps) => {
                 <div className={cls.label}>{label}</div>
             )}
             <input
+                ref={ref}
                 type={type}
                 onFocus={() => setIsFocus(true)}
                 onBlur={() => setIsFocus(false)}
