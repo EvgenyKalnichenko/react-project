@@ -15,7 +15,7 @@ interface AppInputProps extends HTMLInputProps {
     onChange?: (value: string) => void
 }
 
-const AppInput = memo((props: AppInputProps) => {
+export const AppInput = memo((props: AppInputProps) => {
     const {
         className,
         onChange,
