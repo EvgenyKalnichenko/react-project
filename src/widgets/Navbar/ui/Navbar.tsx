@@ -21,24 +21,28 @@ const Navbar = ({ className, collapsed }: NavbarProps) => {
     return (
         <div className={classNames(cls.navbar, { [cls.collapsed]: collapsed }, [className])}>
             <div className={classNames(cls.navbar__container)}>
-                <div className={classNames(cls.navbar__list, {}, [])}>
-                    <AppLink
-                        theme={AppLinkTheme.SECONDARY}
-                        className={classNames(cls.navbar__link)}
-                        to={RoutePath.main}
-                    >
-                        <HomeIcon />
-                        <span>{t('Главная')}</span>
-                    </AppLink>
-                    <AppLink
-                        theme={AppLinkTheme.SECONDARY}
-                        className={classNames(cls.navbar__link)}
-                        to={RoutePath.about}
-                    >
-                        <InfoIcon />
-                        <span>{t('О сайте')}</span>
-                    </AppLink>
-                </div>
+                <ul className={classNames(cls.navbar__list, {}, [])}>
+                    <li>
+                        <AppLink
+                            theme={AppLinkTheme.SECONDARY}
+                            className={classNames(cls.navbar__link)}
+                            to={RoutePath.main}
+                        >
+                            <HomeIcon />
+                            <span>{t('Главная')}</span>
+                        </AppLink>
+                    </li>
+                    <li>
+                        <AppLink
+                            theme={AppLinkTheme.SECONDARY}
+                            className={classNames(cls.navbar__link)}
+                            to={RoutePath.about}
+                        >
+                            <InfoIcon />
+                            <span>{t('О сайте')}</span>
+                        </AppLink>
+                    </li>
+                </ul>
             </div>
             <AppButton
                 onClick={() => setIsAuthModal(true)}

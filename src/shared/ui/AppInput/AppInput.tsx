@@ -41,14 +41,7 @@ export const AppInput = memo((props: AppInputProps) => {
     }, [autofocus]);
 
     return (
-        <div className={
-            classNames(
-                cls.AppInput,
-                { [cls.AppInput__error]: error, [cls.AppInput__focus]: isFocus },
-                [className],
-            )
-        }
-        >
+        <div className={classNames('', {}, [className])}>
             {label && (
                 <div className={cls.label}>{label}</div>
             )}
@@ -58,7 +51,10 @@ export const AppInput = memo((props: AppInputProps) => {
                 onFocus={() => setIsFocus(true)}
                 onBlur={() => setIsFocus(false)}
                 onChange={onChangeHandler}
-                className={classNames(cls.input, { }, [])}
+                className={classNames(cls.input, {
+                    [cls.input__focus]: isFocus,
+                    [cls.input__error]: error,
+                }, [])}
                 {...otherProps}
             />
             {error && (
