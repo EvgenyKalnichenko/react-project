@@ -1,0 +1,23 @@
+.input {
+  background: transparent;
+  border-radius: var(--border-radius-large);
+  padding: calc(var(--ui-indent) * 2) calc(var(--ui-indent) * 4);
+  outline: none;
+  border: 1px solid var(--icon-color);
+  color: var(--secondary-color);
+  width: 100%;
+
+  &__error {
+    border-color: var(--cancel-color);
+  }
+
+  &__focus {
+    border-color: var(--accent-color);
+  }
+}
+
+.error {
+  color: var(--cancel-color);
+  font: var(--font-s);
+  padding: 4px 8px;
+}
