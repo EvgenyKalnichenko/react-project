@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import AppButton, { ThemeButton } from 'shared/ui/AppButton/AppButton';
 import { LoginModal } from 'features/AuthByUserName';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserAuthData, userActions } from 'entities/User';
 import cls from './Navbar.module.scss';
 import HomeIcon from './icon/Home.svg';
 import InfoIcon from './icon/Info.svg';
@@ -17,6 +19,12 @@ interface NavbarProps {
 const Navbar = ({ className, collapsed }: NavbarProps) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
+    const dispatch = useDispatch();
+    const authData = useSelector(getUserAuthData);
+
+    const onLogout = useCallback(() => {
+        dispatch(userActions.logout());
+    }, [dispatch]);
 
     return (
         <div className={classNames(cls.navbar, { [cls.collapsed]: collapsed }, [className])}>
@@ -44,13 +52,24 @@ const Navbar = ({ className, collapsed }: NavbarProps) => {
                     </li>
                 </ul>
             </div>
-            <AppButton
-                onClick={() => setIsAuthModal(true)}
-                theme={ThemeButton.OUTLINE_INVERTED}
-            >
-                {t('Войти')}
-            </AppButton>
-            <LoginModal isOpen={isAuthModal} onClose={() => setIsAuthModal(false)} />
+            {authData ? (
+                <AppButton
+                    onClick={onLogout}
+                    theme={ThemeButton.OUTLINE_INVERTED}
+                >
+                    {t('Выйти')}
+                </AppButton>
+            ) : (
+                <div>
+                    <AppButton
+                        onClick={() => setIsAuthModal(true)}
+                        theme={ThemeButton.OUTLINE_INVERTED}
+                    >
+                        {t('Войти')}
+                    </AppButton>
+                    <LoginModal isOpen={isAuthModal} onClose={() => setIsAuthModal(false)} />
+                </div>
+            )}
         </div>
     );
 };

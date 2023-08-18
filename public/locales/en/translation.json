@@ -11,5 +11,7 @@
   "increment": "increment",
   "decrement": "decrement",
   "Ваше имя": "Name",
-  "Ваш пароль": "Password"
+  "Ваш пароль": "Password",
+  "Неверный логин или пароль": "Wrong login or password",
+  "Выйти": "Выйти"
 }

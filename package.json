@@ -96,6 +96,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
+    "axios": "^1.4.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "i18next": "^22.5.0",
     "i18next-browser-languagedetector": "^6.1.3",
