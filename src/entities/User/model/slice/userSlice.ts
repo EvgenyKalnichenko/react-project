@@ -4,8 +4,8 @@ import { User, UserSchema } from '../type/user';
 
 const initialState: UserSchema = {
     authData: {
-        id: '123',
-        username: 'das',
+        id: '',
+        username: '',
     },
 };
 

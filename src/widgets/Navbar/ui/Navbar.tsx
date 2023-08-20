@@ -52,7 +52,7 @@ const Navbar = ({ className, collapsed }: NavbarProps) => {
                     </li>
                 </ul>
             </div>
-            {authData ? (
+            {authData?.username ? (
                 <AppButton
                     onClick={onLogout}
                     theme={ThemeButton.OUTLINE_INVERTED}
@@ -67,7 +67,7 @@ const Navbar = ({ className, collapsed }: NavbarProps) => {
                     >
                         {t('Войти')}
                     </AppButton>
-                    <LoginModal isOpen={isAuthModal} onClose={() => setIsAuthModal(false)} />
+                    {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={() => setIsAuthModal(false)} />}
                 </div>
             )}
         </div>
