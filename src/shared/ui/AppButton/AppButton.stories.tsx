@@ -44,3 +44,11 @@ export const BackgroundInverted: Story = {
         children: 'Text',
     },
 };
+
+export const Disabled: Story = {
+    args: {
+        theme: ThemeButton.BACKGROUND_INVERTED,
+        children: 'Text',
+        isDisabled: true,
+    },
+};
