@@ -8,7 +8,16 @@
   "comments": [
     { "id": 1, "body": "some comment", "postId": 1 }
   ],
-  "profile": { "name": "typicode" },
+  "profile": {
+    "firstName": "Евгений",
+    "lastName": "Кальниченко",
+    "age": 26,
+    "country": "Russia",
+    "currency": "RUB",
+    "city": "Иваново",
+    "role": "admin",
+    "avatar": "https://avatars.githubusercontent.com/u/43212668?s=400&u=232603c22dbb6442db65e618c60c048c80d48103&v=4"
+  },
   "users": [
     {
       "username": "123",

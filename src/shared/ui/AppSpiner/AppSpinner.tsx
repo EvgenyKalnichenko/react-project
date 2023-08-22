@@ -1,4 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
+import { memo } from 'react';
 import cls from './AppSpinner.module.scss';
 
 interface AppSpinnerProps {
@@ -6,7 +7,7 @@ interface AppSpinnerProps {
     sizeLoader?: number
 }
 
-export const AppSpinner = ({ className, sizeLoader }: AppSpinnerProps) => {
+export const AppSpinner = memo(({ className, sizeLoader }: AppSpinnerProps) => {
     const size = sizeLoader ? `${sizeLoader}em` : '2em';
     return (
         <svg
@@ -17,4 +18,4 @@ export const AppSpinner = ({ className, sizeLoader }: AppSpinnerProps) => {
             <circle className={cls.circle} r="20" cy="50" cx="50" />
         </svg>
     );
-};
+});
