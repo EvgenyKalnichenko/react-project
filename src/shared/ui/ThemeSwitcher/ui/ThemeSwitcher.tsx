@@ -9,7 +9,7 @@ interface ThemeSwitcherProps {
     className?: string
 }
 
-const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
+const ThemeSwitcher = memo(({ className = '' }: ThemeSwitcherProps) => {
     const { toggleTheme } = useTheme();
 
     return (

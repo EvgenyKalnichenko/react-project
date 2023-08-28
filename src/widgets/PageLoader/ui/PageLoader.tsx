@@ -6,7 +6,7 @@ interface PageLoaderProps {
     className?: string
 }
 
-const PageLoader = ({ className }: PageLoaderProps) => (
+const PageLoader = ({ className = '' }: PageLoaderProps) => (
     <div className={classNames(cls.PageLoader, {}, [className])}>
         <AppSpinner sizeLoader={4} />
     </div>

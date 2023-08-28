@@ -5,3 +5,7 @@ export {
 export {
     profileReducer, profileActions,
 } from './slice/profileSlice';
+
+export {
+    fetchProfileData,
+} from './model/services/fetchProfileData/fetchProfileData';

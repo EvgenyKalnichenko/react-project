@@ -16,7 +16,7 @@ const App = () => {
     }, [dispatch]);
 
     return (
-        <div className={classNames('app', {}, [theme])}>
+        <div className={classNames('app', {}, [theme!])}>
             <Suspense fallback="">
                 <div className="content-page">
                     <div className="container">

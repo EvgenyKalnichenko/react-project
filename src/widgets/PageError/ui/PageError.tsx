@@ -7,7 +7,7 @@ interface PageErrorProps {
     className?: string
 }
 
-const PageError = ({ className }: PageErrorProps) => {
+const PageError = ({ className = '' }: PageErrorProps) => {
     const { t } = useTranslation();
 
     const reloadPage = () => {

@@ -1,5 +1,5 @@
 import Portal from 'shared/ui/Portal/Portal';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import {
     ReactNode, MouseEvent, useState, useRef, useEffect, useCallback,
 } from 'react';
@@ -26,7 +26,7 @@ export const Modal = (props: ModalProps) => {
     } = props;
 
     const [isClosing, setIsClosing] = useState(false);
-    const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
     const closeHandler = useCallback(() => {
         if (onClose) {
             setIsClosing(true);
@@ -62,12 +62,12 @@ export const Modal = (props: ModalProps) => {
         }
 
         return () => {
-            clearTimeout(timerRef.current);
+            if (timerRef.current) clearTimeout(timerRef.current);
             window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen, onKeyDown]);
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };

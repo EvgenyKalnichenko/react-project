@@ -1,12 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { fetchProfileData } from '../model/services/fetchProfileData/fetchProfileData';
-import { Profile, ProfileSchema } from '../model/types/profile';
+import { fetchProfileData, Profile, ProfileSchema } from 'entities/Profile';
 
 const initialState: ProfileSchema = {
-    readonly: true,
     isLoading: false,
     error: undefined,
     data: undefined,
+    readonly: true,
 };
 
 export const profileSlice = createSlice({
@@ -34,5 +33,5 @@ export const profileSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { actions: profileActions } = profileSlice;
-export const { reducer: profileReducer } = profileSlice;
+export const { actions: userActions } = profileSlice;
+export const { reducer: userReducer } = profileSlice;

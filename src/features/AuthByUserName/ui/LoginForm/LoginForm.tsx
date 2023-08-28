@@ -57,18 +57,18 @@ const LoginForm = ({ className, onSuccess }: LoginFormProps) => {
                 className={classNames(cls.LoginForm, {}, [className])}
                 onSubmit={onSubmit}
             >
-                <Text title={t('Войти')} theme={TextTheme.PRYMARY} />
+                <Text title={t('Войти')!} theme={TextTheme.PRYMARY} />
                 {error && <Text text={error} theme={TextTheme.ERROR} />}
                 <AppInput
                     className={cls.input}
                     autofocus
-                    placeholder={t('Ваше имя')}
+                    placeholder={t('Ваше имя')!}
                     value={username}
                     onChange={onChangeUsername}
                 />
                 <AppInput
                     className={cls.input}
-                    placeholder={t('Ваш пароль')}
+                    placeholder={t('Ваш пароль')!}
                     value={password}
                     onChange={onChangePassword}
                 />

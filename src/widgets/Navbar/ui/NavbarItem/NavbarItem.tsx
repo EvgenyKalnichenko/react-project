@@ -4,7 +4,7 @@ import { SidebarItemType } from 'widgets/Navbar/model/items';
 
 interface NavbarItemProps {
     className?: string,
-    item?: SidebarItemType
+    item: SidebarItemType
 }
 
 const NavbarItem = memo(({ item, className }: NavbarItemProps) => (

@@ -12,6 +12,7 @@ interface AppInputProps extends HTMLInputProps {
     label?: string,
     value?: string,
     autofocus?: boolean,
+    placeholder?: string,
     onChange?: (value: string) => void
 }
 
@@ -31,7 +32,7 @@ export const AppInput = memo((props: AppInputProps) => {
         onChange?.(e.target.value);
     };
 
-    const ref = useRef<HTMLInputElement>();
+    const ref = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         if (autofocus) {

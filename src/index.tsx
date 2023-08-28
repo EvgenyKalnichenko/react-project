@@ -10,8 +10,8 @@ import 'shared/config/i18n/i18n';
 import 'app/styles/index.scss';
 
 render(
-    <StoreProvider>
-        <BrowserRouter>
+    <BrowserRouter>
+        <StoreProvider>
             <ErrorBoundary fallback={(
                 <Suspense fallback="">
                     <PageError />
@@ -22,7 +22,7 @@ render(
                     <App />
                 </ThemeProvider>
             </ErrorBoundary>
-        </BrowserRouter>
-    </StoreProvider>,
+        </StoreProvider>
+    </BrowserRouter>,
     document.getElementById('root'),
 );
